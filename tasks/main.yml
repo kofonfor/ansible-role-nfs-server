@@ -1,0 +1,6 @@
+- name: install nfs-kernel-server
+  apt: name=nfs-kernel-server
+
+- name: put /etc/exports
+  template: src=exports dest=/etc/exports
+  notify: perform exportfs
